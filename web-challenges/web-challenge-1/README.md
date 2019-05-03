@@ -24,5 +24,14 @@ All the observations made above make easy to reach the following solution:<br>
 <strong>password</strong> : J09SJzEnPScx  ('OR'1'='1 written in base64) <br>
 
 
-<h3>Little comment </h3>
-The link written into the request is an example and not the real one associated to the challenge.
+<h3>Some Notes </h3>
+<ul>
+  <li> The link written into the request is an example and not the real one associated to the challenge.</li>
+  <li> In order to do SQL injection it is necessary to disable javascript. I have done it on Firefox because the procedure is pretty
+  easy: <ul>
+          <li> Go on about:config</li>
+          <li> Search for javascript.enable</li>
+          <li> Disable it</li>
+         </ul>
+ </ul>
+      
