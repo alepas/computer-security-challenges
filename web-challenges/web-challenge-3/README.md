@@ -18,9 +18,12 @@ in this case the cookie called <em>secret</em>, and by a location.ref jQuery
 that has the aim to GET it.
 
 <h3>Some notes</h3>
-Because of the fact that the challenge's goal was the url obtained with the GET 
-request, I have first turned off internet before submitting and, only after, 
-I have submitted the script. In this way I had on the browser bar the 
-desidered url.<br>
-The solution code can be found in a .js file; please note that in order to run in the
-password field it should be put into script tag.
+<ul>
+  <li> The link written into the request is an example and not the real one associated to the challenge.</li>
+  <li> The challenge's goal is to obtained the url containing the GET 
+  request, so, in order to reach it, I have first turned off internet before submitting and, only after, 
+  I have submitted the script. In this way I had on the browser bar the 
+  desidered url.<br></li>
+  <li>The solution code can be found in a .js file; please note that in order to run in the
+  password field it should be put into script tag.</li>
+<ul>
