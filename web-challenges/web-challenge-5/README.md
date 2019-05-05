@@ -1,6 +1,6 @@
 <h1>Challenge 5</h1>
 <h2>Request</h2>
-As we are approaching the last challenge, we have a feedback form for you: https://web5.it/. 
+As we are approaching the last challenge, we have a feedback form for you: https://web5.it/code_challenge.php. 
 Can you trick who reads the messages into sending us his session cookie?<br>
 
 To validate your solution, please submit an URL belonging to the domain web5.chall.necst.it, which, when opened in a browser:
@@ -33,7 +33,7 @@ To solve this challenge the following passages must be done:
   in order to reach it.<br> The solution will be the url in the log above the 403 error.</li>
 </ul>
 
-<h3>Some notes</li>
+<h3>Some notes</h3>
 <ul>
 <li> The link written into the request is an example and not the real one associated to the challenge.</li>
 </ul>

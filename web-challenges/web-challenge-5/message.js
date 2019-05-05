@@ -1,1 +1,1 @@
-<script src=https://page name/attachment/id copied from the url”></script>
+<script src="https://page name/attachment/id copied from the urlâ€></script>
