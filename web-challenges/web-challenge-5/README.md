@@ -33,7 +33,7 @@ To solve this challenge the following passages must be done:
   in order to reach it.<br> The solution will be the url in the log above the 403 error.</li>
 </ul>
 
-<h3>Little notes</li>
+<h3>Some notes</li>
 <ul>
 <li> The link written into the request is an example and not the real one associated to the challenge.</li>
 </ul>
