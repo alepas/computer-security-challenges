@@ -22,7 +22,7 @@ In order to solve this challenge it is necessary to
 As soon as the POST request is launched, reload the web page; in this way the solution will appear.<br> 
 <strong>REMEMBER:</strong> be fast in reloading! There are just 3 seconds!
 
-<h3>Some notes</li>
+<h3>Some notes</h3>
 <ul>
 <li> The link written into the request is an example and not the real one associated to the challenge.</li>
 </ul>
