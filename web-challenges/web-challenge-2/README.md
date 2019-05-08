@@ -11,7 +11,7 @@ By analyzing the code it is also possible to see that there are some filters on 
 Between those unaccepted words there are also <em>union</em>, <em>=</em> and <em>' or '</em> and so it is not possible to go
 for the easiest way which would make me put into the username field something like:<br>
 <ul>
-  <li>' OR (SELECT ccnumber FROM credit_card WHERE username='Douglas')";#<li>
+  <li>' OR (SELECT ccnumber FROM credit_card WHERE username='Douglas')";#</li>
   <li>random name' UNION (SELECT ccnumber FROM credit_card WHERE username='Douglas')";# </li>
 </ul>
 
@@ -33,7 +33,7 @@ In order to achieve the goal it is necessary to follow the next few steps:
   <li> use the INSERT query to add in the DB 2 new users, the second tuple has a username formed by the concat of a random string
   and the ccnumber obtained via a SELECt request. <br>
   The input fields will be filled as in the example: <br>
-  <strong>username</strong>: random username
+  <strong>username</strong>: random username<br>
   <strong>password</strong>: random password'),((SELECT concat(‘nome’,ccnumber) FROM credit_card WHERE username LIKE ‘tuoNome’),’password2’)
   
   NB. Because of the fact that it is not allowed to use <em>=</em> it can be replace by the LIKE. 
