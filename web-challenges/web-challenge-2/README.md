@@ -20,37 +20,48 @@ The two solutions written above wouldn't be accepted because of the filtered str
 Going deeper into the register_user function it is possible to find that:
 <ul>
   <li> there are 2 queries: the first one is a SELECT which checks if the selected username is already into the db, 
-  the second one is an INSERT which inserts the tuple (username, password) into the db.</li>
-  <li> there are no further checks on what is insert, so the only control done is given by the filter function</li>
-  <li> the only case in which the username is printed is when there already exist an other user with the same username
-  into the DB</li>
+  the second one is an INSERT which inserts the tuple (username, password) into the db;</li>
+  <li> there are no further checks on what is insert, so the only control done is given by the filter function;</li>
+  <li> the only case in which the username is printed is when there already exists an other user with the same username
+  into the DB.</li>
 </ul>
 
-The objective is to correctely register a user containing the credit card number of Douglas and then retrieve it by trying
+The objective is to correctely register a user containing Douglas credit card number and then retrieve it by trying
 to register a second user with the same username.<br>
 In order to achieve the goal it is necessary to follow the next few steps:
 <ul>
-  <li> use the INSERT query to add in the DB 2 new users, the second tuple has a username formed by the concat of a random string
-  and the ccnumber obtained via a SELECT request. <br>
-  The input fields will be filled as in the example: <br>
+  <li> Use the INSERT query to add in the DB 2 new users, the second tuple has a username formed by the concat of a random string
+  and the ccnumber obtained via a SELECT request. The input fields will be filled as below: <br>
   <strong>username</strong>: random username<br>
   <strong>password</strong>: random password'),((SELECT concat('random name',ccnumber) FROM credit_card WHERE username LIKE 'Douglas%'),'password2')
-  
+ 
   NB. Because of the fact that it is not allowed to use <em>=</em> it can be replace by the LIKE. </li>
-  <li> press the Registation button, if everything has been written in a correct way, the 2 new users will be succesfully
+  <li> Press the Registation button, if everything has been written in a correct way, the 2 new users will be succesfully
   add to the DB</li>
-  <li> do a second registation in which the username is equal to the concat registered before:
-  In order to correctly fill the SQL request it is necessary to do the or between a random possible username and
-  the desidered one, but the <em>or</em> is a not allowed string. To bypass the filter is is foundametal 
-  to notice that the string that is actually replaced isn't <em>or</em> but it's the or sourrounded by 2 spaces.<br>
-  Because of this it is possible to avoid the replace of this string by writing <strong>/*'*/OR/*'*/</strong>. The comments
-  before and after the or changes the string format and let it to be read.<br>
-  The input fields will be filled as in the example: <br>
-  <strong>username</string>: random name'/*'*/OR/*'*/ username LIKE (SELECT concat('random name',ccnumber) FROM credit_card WHERE username LIKE 'Douglas%')';# <br>
+  <li> Do a second registation in which the username is equal to the concat registered before:
+  In order to correctly fill the SQL request it is necessary to do the <em>OR</em> between a random possible username and
+  the desidered one, but the <em>OR</em> is a not allowed string. To bypass the filter is is foundametal 
+  to notice that the string that is actually replaced isn't <em>OR</em> but it's the or sourrounded by 2 spaces.<br>
+  Because of this, it is possible to avoid the replacement by writing <strong>/*'*/OR/*'*/</strong>. The comments
+  before and after it changes the string format and let it to be read.<br>
+  The input fields will be filled as below: <br>
+  <strong>username</strong>: random name'/*'*/OR/*'*/ username LIKE (SELECT concat('random name',ccnumber) FROM credit_card WHERE username LIKE 'Douglas%')';# <br>
   <strong>password</strong>: random password </li>
-  <li> press the Registation button</li>
+  <li> Press the Registation button.</li>
 </ul>
-The error allert will tell the username given by the concatenation and so it will retrieve the information we are looking for.
+The error alert will tell the username given by the concatenation and so it will retrieve the information we are looking for.
+
+<h3>Some notes</h3>
+<ul>
+  <li> The link written into the request is an example and not the real one associated to the challenge.</li>
+  <li> In order to do SQL injection it is necessary to disable javascript. I have done it on Firefox because the procedure is pretty
+  easy: <ul>
+          <li> Go on about:config</li>
+          <li> Search for javascript.enable</li>
+          <li> Disable it</li>
+         </ul>
+ </ul>
+
   
   
 
